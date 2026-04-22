@@ -36,7 +36,9 @@ for article in articles:
         titol = titol_tag.get_text(strip=True)
         link = link_tag["href"]
 
-        if link.startswith("/"):
+        if link.startswith("www."):
+            link = "https://" + link
+        elif link.startswith("/"):
             link = "https://www.leparisien.fr" + link
 
         subtitol = ""
